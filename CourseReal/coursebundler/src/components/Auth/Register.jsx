@@ -12,6 +12,13 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { register } from '../../redux/actions/user';
+import Web3 from 'web3';
+import UserRegistrationABI from './UserRegistrationABI.json'; // Assuming you have the ABI in a separate file
+
+const web3 = new Web3(window.ethereum);
+
+const contractAddress = '0xe0545c2b8990386c4ab78f3c39e5c61a50e2d5bb'; // Replace with your contract address
+const contract = new web3.eth.Contract(UserRegistrationABI, contractAddress);
 
 export const fileUploadCss = {
   cursor: 'pointer',
@@ -48,8 +55,9 @@ const Register = () => {
     };
   };
 
-  const submitHandler = e => {
+  const submitHandler = async e => {
     e.preventDefault();
+
     const myForm = new FormData();
 
     myForm.append('name', name);
@@ -57,7 +65,18 @@ const Register = () => {
     myForm.append('password', password);
     myForm.append('file', image);
 
-    dispatch(register(myForm));
+    const accounts = await window.ethereum.request({
+      method: 'eth_requestAccounts',
+    });
+    const userAddress = accounts[0];
+
+    // Call the registerUser function on the smart contract
+    const result = await contract.methods
+      .registerUser(name, email, password, '', '')
+      .send({ from: userAddress });
+
+    console.log(result);
+    if (result) dispatch(register(myForm));
   };
 
   return (

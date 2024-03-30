@@ -1,0 +1,263 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "addScore",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_courseId",
+        "type": "uint256"
+      }
+    ],
+    "name": "deleteCourse",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_courseId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_poster",
+        "type": "string"
+      }
+    ],
+    "name": "makeCourse",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_password",
+        "type": "string"
+      }
+    ],
+    "name": "registerUser",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_courseId",
+        "type": "string"
+      }
+    ],
+    "name": "subscribeToCourse",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "subtractScore",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getUserCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      }
+    ],
+    "name": "isUserRegistered",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_password",
+        "type": "string"
+      }
+    ],
+    "name": "loginUser",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "_name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "_email",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "_passwordHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "_course_id",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "string[]",
+            "name": "_poster",
+            "type": "string[]"
+          },
+          {
+            "internalType": "bool",
+            "name": "_registered",
+            "type": "bool"
+          },
+          {
+            "internalType": "string[]",
+            "name": "_subscription_id",
+            "type": "string[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_score",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct UserRegistration.UserData",
+        "name": "user",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "users",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_passwordHash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bool",
+        "name": "_registered",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_score",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
