@@ -13,6 +13,10 @@ const schema = mongoose.Schema({
     required: [true, "Please enter the description"],
     minLength: [20, "Length must be at least 20 characters"],
   },
+  quiz: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Quiz", // Reference to the separate Quiz model
+  },
   lectures: [
     {
       title: {

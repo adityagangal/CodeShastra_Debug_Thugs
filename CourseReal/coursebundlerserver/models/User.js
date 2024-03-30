@@ -53,6 +53,40 @@ const schema = new mongoose.Schema({
       poster: String,
     },
   ],
+  quizAttempts: [
+    {
+      course: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Course",
+        required: true,
+      },
+      score: {
+        type: Number,
+        default: 0,
+      },
+      questionScores: [
+        {
+          question: {
+            type: String,
+            required: true,
+          },
+          userAnswer: {
+            type: Number,
+            min: 0,
+            max: 3, // Valid choice index
+          },
+          correct: {
+            type: Boolean,
+            default: false,
+          },
+        },
+      ],
+      attempted: {
+        type: Boolean,
+        default: false,
+      },
+    },
+  ],
 
   createdAt: {
     type: Date,
