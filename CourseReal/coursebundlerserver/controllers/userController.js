@@ -40,8 +40,6 @@ export const register = catchAsyncError(async (req, res, next) => {
 export const login = catchAsyncError(async (req, res, next) => {
   const { email, password } = req.body;
 
-  // const file = req.file;
-
   if (!email || !password)
     return next(new ErrorHandler("Please enter all fields", 400));
 
