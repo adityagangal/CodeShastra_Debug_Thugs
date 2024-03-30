@@ -8,13 +8,11 @@ import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import ForgetPassword from './components/Auth/ForgetPassword';
 import ResetPassword from './components/Auth/ResetPassword';
+import Subscribe from './components/payment/Payment';
 import Contact from './components/Contact/Contact';
 import Request from './components/Request/Request';
 import About from './components/About/About';
-import Subscribe from './components/Payments/Subscribe';
 import NotFound from './components/Layout/NotFound/NotFound';
-import PaymentSuccess from './components/Payments/PaymentSuccess';
-import PaymentFail from './components/Payments/PaymentFail';
 import CoursePage from './components/CoursePage/CoursePage';
 import Profile from './components/Profile/Profile';
 import ChangePassword from './components/Profile/ChangePassword';
@@ -68,8 +66,8 @@ function App() {
             <Route
               path="/course/:id"
               element={
-                <ProtectedRoute isAuthenticated={isAuthenticated} >
-                  <CoursePage user={user}/>
+                <ProtectedRoute isAuthenticated={isAuthenticated}>
+                  <CoursePage user={user} />
                 </ProtectedRoute>
               }
             />
@@ -154,8 +152,6 @@ function App() {
               }
             />
             <Route path="*" element={<NotFound />} />
-            <Route path="/paymentsuccess" element={<PaymentSuccess />} />
-            <Route path="/paymentfail" element={<PaymentFail />} />
 
             {/* Admin Routes */}
             <Route
