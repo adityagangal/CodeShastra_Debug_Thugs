@@ -101,7 +101,7 @@ const About = () => {
           size={'xs'}
           fontFamily={'sans-serif'}
           textTransform={'uppercase'}
-          children="Payments are Secured by Razorpay"
+          children="Payments are Secured by MetaMask"
         />
       </HStack>
     </Container>
