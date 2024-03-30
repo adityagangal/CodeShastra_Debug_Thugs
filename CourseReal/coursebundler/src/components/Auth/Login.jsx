@@ -11,6 +11,12 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { login } from '../../redux/actions/user.js';
+import Web3 from 'web3';
+import UserRegistrationABI from './UserRegistrationABI.json';
+const web3 = new Web3(window.ethereum);
+
+const contractAddress = '0xe0545c2b8990386c4ab78f3c39e5c61a50e2d5bb'; // Replace with your contract address
+const contract = new web3.eth.Contract(UserRegistrationABI, contractAddress);
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -18,9 +24,20 @@ const Login = () => {
 
   const dispatch = useDispatch();
 
-  const submitHandler = e => {
+  const submitHandler = async e => {
     e.preventDefault();
-    dispatch(login(email, password));
+    const accounts = await window.ethereum.request({
+      method: 'eth_requestAccounts',
+    });
+    const userAddress = accounts[0];
+    console.log(email);
+    // Call the registerUser function on the smart contract
+    const result = await contract.methods
+      .loginUser(email, password)
+      .send({ from: userAddress });
+
+    console.log(result);
+    if (result) dispatch(login(email, password));
   };
 
   return (
