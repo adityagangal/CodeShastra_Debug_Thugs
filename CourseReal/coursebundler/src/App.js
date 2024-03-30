@@ -143,7 +143,11 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route path="/subscribe" element={<Subscribe />} />
+            <Route
+              path="/subscribe"
+              isAuthenticated={isAuthenticated}
+              element={<Subscribe />}
+            />
             <Route path="*" element={<NotFound />} />
 
             {/* Admin Routes */}
