@@ -8,7 +8,7 @@ import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import ForgetPassword from './components/Auth/ForgetPassword';
 import ResetPassword from './components/Auth/ResetPassword';
-import Subscribe from './components/payment/Payment';
+import Subscribe from './components/payment/SubscribeApp';
 import Contact from './components/Contact/Contact';
 import Request from './components/Request/Request';
 import About from './components/About/About';
@@ -145,11 +145,8 @@ function App() {
             />
             <Route
               path="/subscribe"
-              element={
-                <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <Subscribe user={user} />
-                </ProtectedRoute>
-              }
+              isAuthenticated={isAuthenticated}
+              element={<Subscribe />}
             />
             <Route path="*" element={<NotFound />} />
 
