@@ -40,7 +40,6 @@ llm = HuggingFaceHub(
     },
 )
 
-
 def chat_with_bot(txt: str):
     print
     chat_model = ChatHuggingFace(llm=llm)
@@ -52,7 +51,6 @@ def chat_with_bot(txt: str):
     ]
     res = chat_model(messages).content
     return res
-
 
 @app.post('/chat')
 async def chat(text: str = Form(...)):
