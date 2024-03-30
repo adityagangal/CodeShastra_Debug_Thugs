@@ -9,7 +9,7 @@ from langchain_community.llms import HuggingFaceHub
 import os
 
 load_dotenv()
-key = get_key(key_to_get="HUGGINGFACEHUB_API_KEY", dotenv_path=".env")
+key = "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"
 
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = key
 
