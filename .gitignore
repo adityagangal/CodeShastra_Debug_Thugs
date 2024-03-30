@@ -1,0 +1,96 @@
+# ignore all venv directories
+venv/
+
+# ignore all node_modules directories
+node_modules/
+
+# ignore all .git directories
+.git/
+
+# ignore all .idea directories
+.idea/
+
+# ignore all .vscode directories
+.vscode/
+
+# ignore all __pycache__ directories
+__pycache__/
+
+# ignore all .pytest_cache directories
+.pytest_cache/
+
+# ignore all python related redundant files
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pyw
+*.pyz
+*.pyw
+*.pyi
+
+# ignore all python related redundant directories
+__pycache__/
+*.egg-info/
+dist/
+build/
+*.egg
+*.egg-info
+*.dist-info
+*.dist
+*.build
+*.cache
+*.tox
+*.env
+*.venv
+*.venv2
+*.venv3
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE specific stuff (choose ones you use)
+.idea/
+.vscode/
+
+# Virtual environment
+venv/
+
+# Test coverage (if using)
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+
+# Optional: Logs
+*.log
+
+# Files you want to keep secret (not recommended for version control)
+.env  # Environment variables
+
+# Web assets cache (if using WebAssets)
+.webassets-cache
+

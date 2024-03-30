@@ -1,0 +1,53 @@
+# ignore all .env files
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+pyvenv.cfg
+venv/ 
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE specific stuff (choose ones you use)
+.idea/
+.vscode/
+
+# Virtual environment
+venv/
+
+# Test coverage (if using)
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+
+# Optional: Logs
+*.log
+
+# Files you want to keep secret (not recommended for version control)
+.env  # Environment variables
+
+# Web assets cache (if using WebAssets)
+.webassets-cache
