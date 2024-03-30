@@ -48,7 +48,7 @@ const Register = () => {
     };
   };
 
-  const submitHandler=(e)=>{
+  const submitHandler = e => {
     e.preventDefault();
     const myForm = new FormData();
 
@@ -58,12 +58,12 @@ const Register = () => {
     myForm.append('file', image);
 
     dispatch(register(myForm));
-  }
+  };
 
   return (
     <Container h={'120vh'}>
       <VStack h={'full'} justifyContent={'center'} spacing={'8'}>
-        <Heading children="Register to CourseBundler" />
+        <Heading children="Register to EduChain" />
 
         <form onSubmit={submitHandler} style={{ width: '100%' }}>
           <Box my={'4'} display={'flex'} justifyContent={'center'}>

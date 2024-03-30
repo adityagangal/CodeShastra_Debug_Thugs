@@ -26,7 +26,7 @@ const Login = () => {
   return (
     <Container h={'95vh'}>
       <VStack h={'full'} justifyContent={'center'} spacing={'16'}>
-        <Heading children="Welcome to the CourseBundler" />
+        <Heading children="Welcome to the EduChain" />
 
         <form onSubmit={submitHandler} style={{ width: '100%' }}>
           <Box my={'4'}>
