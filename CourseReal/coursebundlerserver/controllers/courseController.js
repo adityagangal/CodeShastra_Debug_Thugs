@@ -25,6 +25,19 @@ export const getAllCourses = catchAsyncError(async (req, res, next) => {
   });
 });
 
+export const getQuizStatus = catchAsyncError(async (req, res, next) => {
+  const { courseId, userId } = req.body;
+  if (!courseId || !userId)
+    return next(new ErrorHandler("Please provide courseId and userId", 400));
+
+  const course = await Course.findById(courseId);
+  if (!course) return next(new ErrorHandler("Course not found", 404));
+
+  const user = course.students.find((item) => item.userId === userId);
+
+  if (!user) return next(new ErrorHandler("User not found", 404));
+});
+
 export const createCourse = catchAsyncError(async (req, res, next) => {
   const { title, description, category, createdBy } = req.body;
 
@@ -37,6 +50,9 @@ export const createCourse = catchAsyncError(async (req, res, next) => {
 
   const mycloud = await cloudinary.v2.uploader.upload(fileUri.content);
 
+  const quiz = req.body.quiz || [];
+  const newQuiz = await Quiz.create(quiz);
+
   await Course.create({
     title,
     description,
@@ -46,6 +62,7 @@ export const createCourse = catchAsyncError(async (req, res, next) => {
       public_id: mycloud.public_id,
       url: mycloud.secure_url,
     },
+    quiz: newQuiz._id,
   });
 
   res.status(201).json({
