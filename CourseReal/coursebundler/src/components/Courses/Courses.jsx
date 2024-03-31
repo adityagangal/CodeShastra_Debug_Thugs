@@ -17,6 +17,18 @@ import { toast } from 'react-hot-toast';
 import { addToPlaylist } from '../../redux/actions/profile';
 import { loadUser } from '../../redux/actions/user';
 
+const subjectLinks = {
+  Physics: 'http://127.0.0.1:8000/subject/Physics',
+  Chemistry: 'http://127.0.0.1:8000/subject/Chemistry',
+  Maths: 'http://127.0.0.1:8000/subject/Mathematics',
+  Biology: 'http://127.0.0.1:8000/subject/Biology',
+};
+
+const handleSubjectLink = (e, link) => {
+  e.preventDefault();
+  window.open(link, '_blank');
+};
+
 const Course = ({
   views,
   title,
@@ -65,7 +77,6 @@ const Course = ({
         children={`Views - ${views}`}
         textTransform={'uppercase'}
       />
-
       <Stack direction={['column', 'row']} alignItems={'center'}>
         <Link to={`/course/${id}`}>
           <Button colorScheme={'yellow'}>Watch Now</Button>
@@ -79,6 +90,15 @@ const Course = ({
           Add to Playlist
         </Button>
       </Stack>
+      {subjectLinks[title] && (
+        <Button
+          colorScheme={'yellow'}
+          variant={'outline'}
+          onClick={e => handleSubjectLink(e, subjectLinks[title])}
+        >
+          AR Experience
+        </Button>
+      )}
     </VStack>
   );
 };
@@ -94,6 +114,10 @@ const Courses = () => {
   };
 
   const categories = [
+    'Biology',
+    'Physics',
+    'Chemistry',
+    'Mathematics',
     'Web Development',
     'Artificial Intelligence',
     'Data Science',

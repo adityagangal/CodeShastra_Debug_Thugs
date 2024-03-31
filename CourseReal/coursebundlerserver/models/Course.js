@@ -4,14 +4,11 @@ const schema = mongoose.Schema({
   title: {
     type: String,
     required: [true, "Please enter the title"],
-    minLength: [4, "Length must be at least 4 characters"],
-    maxLength: [80, "Length can't exceed 80 characters"],
   },
 
   description: {
     type: String,
     required: [true, "Please enter the description"],
-    minLength: [20, "Length must be at least 20 characters"],
   },
   quiz: {
     type: mongoose.Schema.Types.ObjectId,

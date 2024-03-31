@@ -28,6 +28,10 @@ const CreateCourse = () => {
   const { loading, error, message } = useSelector(state => state.admin);
 
   const categories = [
+    'Biology',
+    'Mathematics',
+    'Physics',
+    'Chemistry',
     'Web Development',
     'Artificial Intelligence',
     'Data Science',
@@ -62,16 +66,16 @@ const CreateCourse = () => {
   };
 
   useEffect(() => {
-    if(error){
+    if (error) {
       toast.error(error);
-      dispatch({type:'clearError'});
+      dispatch({ type: 'clearError' });
     }
-    if(message){
+    if (message) {
       toast.success(message);
-      dispatch({type:'clearMessage'});
+      dispatch({ type: 'clearMessage' });
     }
-  }, [dispatch, error, message])
-  
+  }, [dispatch, error, message]);
+
   return (
     <Grid
       css={{

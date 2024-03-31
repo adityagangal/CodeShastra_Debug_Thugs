@@ -15,7 +15,7 @@ import {
   selectInferenceResult,
   BotOpen,
   isbotOpen,
-} from "./redux/reducers/llmreducer"
+} from './redux/reducers/llmreducer';
 
 const Quiz = () => {
   var total = 0;

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, useParams } from 'react-router-dom';
 import { getCourseLectures } from '../../redux/actions/course';
 import Loader from '../Layout/Loader/Loader';
+import Quiz from '../../quizpage';
 
 const CoursePage = ({ user }) => {
   const [lectureNumber, setLectureNumber] = useState(0);
@@ -49,7 +50,6 @@ const CoursePage = ({ user }) => {
             <Heading m={'4'} children="Description" />
             <Text m={'4'} children={lectures[lectureNumber].description} />
           </Box>
-
           <VStack>
             {lectures.map((element, index) => (
               <button
