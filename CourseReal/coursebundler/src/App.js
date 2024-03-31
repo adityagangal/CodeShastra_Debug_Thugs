@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import Header from './components/Layout/Header/Header';
 import Courses from './components/Courses/Courses';
 import Footer from './components/Layout/Footer/Footer';
+import Chatbot from './components/Chatbot';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import ForgetPassword from './components/Auth/ForgetPassword';
@@ -200,7 +201,9 @@ function App() {
               }
             />
           </Routes>
-
+          {/* <div className="fixed bottom-50 right-0"> */}
+            <Chatbot />
+          {/* </div> */}
           <Footer />
           <Toaster />
         </>
